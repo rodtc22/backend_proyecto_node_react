@@ -22,3 +22,4 @@ npm install mysql2
 npm install -D sequelize-cli
 npx sequelize-cli init
 ```
+
