@@ -7,7 +7,7 @@
 npx sequelize-cli model:generate --name User --attributes email:string,password:string,status:integer
 ```
 
-## Lleva las migraciones a la Base de Datos
+## Lleva las migraciones a la Base de Datos generando tablas
 ```bash
 npx sequelize-cli db:migrate
 ```
