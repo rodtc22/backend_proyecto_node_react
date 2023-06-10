@@ -1,0 +1,31 @@
+### Listar todas las categorias
+GET http://127.0.0.1:4000/api/categoria
+Accept: application/json
+
+### Guardar categoria
+POST http://127.0.0.1:4000/api/categoria
+Accept: application/json
+Content-Type: application/json
+
+{
+    "nombre" : "Juego",
+    "detalle" : "Left 4 Dead"
+}
+
+### Mostrar Categoria
+GET http://127.0.0.1:4000/api/categoria/3
+Accept: application/json
+
+### Modificar categoria
+PUT http://127.0.0.1:4000/api/categoria/3
+Accept: application/json
+Content-Type: application/json
+
+{
+    "nombre" : "Ropa Modificada",
+    "detalle" : "Ropa para damas"
+}
+
+### Eliminar categoria
+DELETE http://127.0.0.1:4000/api/categoria/3
+Accept: application/json

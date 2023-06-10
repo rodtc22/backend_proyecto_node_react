@@ -36,3 +36,17 @@ npx sequelize-cli db:migrate:status
 ```bash
 npx sequelize-cli db:migrate
 ```
+
+## Quitar la ultima migracion
+```bash
+npx sequelize-cli db:migrate:undo
+```
+
+## Quitar todas las migraciones
+```bash
+npx sequelize-cli db:migrate:undo:all
+```
+
+# COMO PONER VALIDACIONES A LOS CAMPOS DE UNA TABLA
+Vea en `models/categoria.js` (en el campo nombre) para saber como puedo poner esas valiciones de:
+* allowNull y demas...

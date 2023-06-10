@@ -17,7 +17,7 @@ npm install sequelize
 npm install mysql2
 ```
 
-## Instalar Sequelize CLI y configurar
+## Instalar Sequelize CLI y configurar 
 ```bash
 npm install -D sequelize-cli
 npx sequelize-cli init

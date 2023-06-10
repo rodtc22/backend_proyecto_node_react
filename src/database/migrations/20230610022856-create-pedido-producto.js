@@ -10,6 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       pedidoId: {
+        allowNull: false,
         type: Sequelize.INTEGER,
         references: {
           model: 'Pedidos',
@@ -17,6 +18,7 @@ module.exports = {
         }
       },
       productoId: {
+        allowNull: false,
         type: Sequelize.INTEGER,
         references: {
           model: 'Productos',
@@ -24,6 +26,7 @@ module.exports = {
         }
       },
       cantidad: {
+        defaultValue: 1,
         type: Sequelize.INTEGER
       },
       createdAt: {

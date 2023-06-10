@@ -10,15 +10,18 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       fecha: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       estado: {
+        defaultValue: 1,
         type: Sequelize.INTEGER
       },
       observacion: {
         type: Sequelize.TEXT
       },
       clienteId: {
+        allowNull: false,
         type: Sequelize.INTEGER,
         references: {
           model: 'Clientes',
