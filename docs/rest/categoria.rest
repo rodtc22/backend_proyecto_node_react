@@ -8,8 +8,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "nombre" : "Juego",
-    "detalle" : "Left 4 Dead"
+    "nombre" : "prueba",
+    "detalle" : "ejejejejej"
 }
 
 ### Mostrar Categoria
@@ -22,10 +22,10 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "nombre" : "Ropa Modificada",
-    "detalle" : "Ropa para damas"
+    "nombre" : "Juego",
+    "detalle" : "PES 2023 modificado"
 }
 
 ### Eliminar categoria
-DELETE http://127.0.0.1:4000/api/categoria/3
+DELETE http://127.0.0.1:4000/api/categoria/7
 Accept: application/json
