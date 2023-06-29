@@ -11,16 +11,16 @@ export default {
 
             const offset = (page-1) * limit; // apartir de que dato quiero mostrar
 
-            const clientes = await models.Cliente.findAndCountAll({
+            const usuarios = await models.User.findAndCountAll({
                 where: {
-                    id: {
+                    email: {
                         [Op.like]: `%${q}%`
                     }
                 },
                 offset: offset,
                 limit: limit
             });
-            return res.status(200).json(clientes);
+            return res.status(200).json(usuarios);
         } catch (error) {
             return res.status(500).json({message: error.message});
         }
@@ -28,10 +28,10 @@ export default {
     guardar: async (req, res) => {
         try {
             const datos = req.body;
-            const cliente = await models.Cliente.create(datos);
+            const usuario = await models.User.create(datos);
 
-            if (cliente.id) {
-                return res.status(201).json({message: "Cliente registrado"});    
+            if (usuario.id) {
+                return res.status(201).json({message: "Usuario registrado"});    
             }
 
         } catch (error) {
@@ -41,12 +41,12 @@ export default {
     mostrar: async (req, res) => {
         try {
             const id = req.params.id;
-            const cliente = await models.Cliente.findByPk(id);
+            const usuario = await models.User.findByPk(id);
 
-            if (cliente.id) {
-                return res.status(200).json(cliente);
+            if (usuario.id) {
+                return res.status(200).json(usuario);
             }
-            return res.status(404).json({message: "Cliente no existe"});
+            return res.status(404).json({message: "Usuario no existe"});
         } catch (error) {
             return res.status(500).json({message: error.message});
         }
@@ -54,16 +54,16 @@ export default {
     modificar: async (req, res) => {
         try {
             const id = req.params.id;
-            const cliente = await models.Cliente.findByPk(id);
+            const usuario = await models.User.findByPk(id);
 
-            if (cliente.id) {
-                await models.Cliente.update(req.body, {
+            if (usuario.id) {
+                await models.User.update(req.body, {
                     where: {
                         id : id
                     }
                 });
             }
-            return res.status(404).json({message: "Cliente actualizado"});
+            return res.status(404).json({message: "Usuario actualizado"});
         } catch (error) {
             return res.status(500).json({message: error.message});
         }
@@ -72,12 +72,12 @@ export default {
         try {
             const id = req.params.id;
 
-            await models.Cliente.destroy({
+            await models.User.destroy({
                 where: {
                     id: id
                 }
             });
-            return res.status(200).json({message: "Cliente eliminado"})
+            return res.status(200).json({message: "Usuario eliminado"})
         } catch (error) {
             return res.status(500).json({message: error.message});
         }

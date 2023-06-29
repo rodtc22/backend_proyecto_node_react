@@ -1,5 +1,7 @@
 import categoriaController from "../controllers/categoria.controller";
+import clienteController from "../controllers/cliente.controller";
 import productoController from "../controllers/producto.controller";
+import usuarioController from "../controllers/usuario.controller";
 import auhtMiddleware from "../middlewares/auth.middleware";
 const { Router } = require("express");
 
@@ -20,5 +22,19 @@ Route.post('/producto', auhtMiddleware, productoController.guardar);
 Route.get('/producto/:id', auhtMiddleware, productoController.mostrar);
 Route.put('/producto/:id', auhtMiddleware, productoController.modificar);
 Route.delete('/producto/:id', auhtMiddleware, productoController.eliminar);
+
+//rutas usuario 
+Route.get('/usuario', auhtMiddleware, usuarioController.listar);
+Route.post('/usuario', auhtMiddleware, usuarioController.guardar);
+Route.get('/usuario/:id', auhtMiddleware, usuarioController.mostrar);
+Route.put('/usuario/:id', auhtMiddleware, usuarioController.modificar);
+Route.delete('/usuario/:id', auhtMiddleware, usuarioController.eliminar);
+
+//rutas clientes
+Route.get('/cliente', auhtMiddleware, clienteController.listar);
+Route.post('/cliente', auhtMiddleware, clienteController.guardar);
+Route.get('/cliente/:id', auhtMiddleware, clienteController.mostrar);
+Route.put('/cliente/:id', auhtMiddleware, clienteController.modificar);
+Route.delete('/cliente/:id', auhtMiddleware, clienteController.eliminar);
 
 export default Route;
