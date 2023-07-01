@@ -1,6 +1,7 @@
 import categoriaController from "../controllers/categoria.controller";
 import clienteController from "../controllers/cliente.controller";
 import productoController from "../controllers/producto.controller";
+import pedidoController from "../controllers/pedido.controller";
 import usuarioController from "../controllers/usuario.controller";
 import auhtMiddleware from "../middlewares/auth.middleware";
 const { Router } = require("express");
@@ -36,5 +37,13 @@ Route.post('/cliente', auhtMiddleware, clienteController.guardar);
 Route.get('/cliente/:id', auhtMiddleware, clienteController.mostrar);
 Route.put('/cliente/:id', auhtMiddleware, clienteController.modificar);
 Route.delete('/cliente/:id', auhtMiddleware, clienteController.eliminar);
+
+//para pedido
+Route.post('/pedido/nuevo-cliente', auhtMiddleware, pedidoController.nuevoCliente);
+Route.get('/pedido/buscar-cliente', auhtMiddleware, pedidoController.buscarCliente);
+
+Route.get('/pedido', auhtMiddleware, pedidoController.index);
+Route.post('/pedido', auhtMiddleware, pedidoController.store);
+Route.get('/pedido/:id', auhtMiddleware, pedidoController.show);
 
 export default Route;
